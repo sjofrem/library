@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&family=Zen+Antique+Soft&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #f2f1ef;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-family: 'Open Sans', sans-serif;
+}
+/* Header section */
+header{
+    padding: 1.5rem;
+    
+}
+h1 {
+    font-family: 'Zen Antique Soft', serif;
+    color: #2b2928;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+/* Main section */
+#addBook {
+    background-color: #f2f1ef;
+    color: #2b2928;
+    padding: 7px 25px;
+    font-weight: 600;
+    border: 2px solid #2b2928;
+    transition: 0.2s;
+}
+#addBook:hover {
+    background-color: #2b2928;
+    color: #f2f1ef;
+}
+#addBook:active {
+    background-color: #474442;
+    color: #f2f1ef;
+}
+
+/*Modal section*/
+
+
+#overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: #413f3d;
+    z-index: 10;
+}
+
+#overlay.active {
+    display: block;
+}
+
+
+
+#modal {
+    position: fixed;
+    z-index: 11;
+    top: 50%; 
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    width: 400px;
+    background-color: #f2f1ef;
+    border-radius: 5px;
+    display: none;
+    padding: 2rem;
+}
+
+#addBookForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#titleModalAdd {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 1rem;
+}
+
+input {
+    padding: 8px;
+    width: 80%;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#checkBox {
+    display: flex;
+    gap: 1rem;
+}
+
+label{
+    font-size: 24px;
+}
+
+#read {
+    margin-top: 5px;
+    width: 20px;
+}
+
+#submit {
+    border: none;
+    padding: 12px 60px;
+    color: #f2f1ef;
+    background-color: #2b2928;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#submit:hover{
+    background-color: #3f3c3b;
+}
+
+#submit:active{
+    background-color: #524d4c;
+}
+
+#modal.active {
+    display: block;
+}
