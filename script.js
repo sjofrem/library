@@ -1,11 +1,4 @@
-const myLibrary = [
-    {
-        title: `"Game of Thrones"`,
-        author: "George R. R. Martin",
-        pages: `694 Pages`,
-        read: false
-    }
-];
+let myLibrary = [];
 
 
 class Book {
@@ -40,7 +33,7 @@ function addBookToLibrary(){
     let read = document.getElementById("read").checked;
     newBook = new Book(`"${title}"`, author, `${pages} Pages`, read);
     myLibrary.push(newBook);
-    console.table(myLibrary);
+    saveData();
     hideModal();
     renderLibrary();
 }
@@ -93,13 +86,31 @@ function createBook(item){
 
     deleteBtn.addEventListener('click', () => {
         myLibrary.splice(myLibrary.indexOf(item),1);
+        saveData();
         renderLibrary();
     });
 
     readBtn.addEventListener('click', () => {
         item.read = !item.read;
+        saveData();
         renderLibrary();
     })
+}
+
+function saveData(){
+     localStorage.setItem('libraryData', JSON.stringify(myLibrary));
+}
+
+function loadData(){
+    if(!localStorage.libraryData){
+        renderLibrary();
+    }
+    else{
+        let objectsData = localStorage.getItem('libraryData');
+        objectsData = JSON.parse(objectsData);
+        myLibrary =  objectsData;
+        renderLibrary();
+    }
 }
 
 const libraryContainer = document.getElementById("library");
@@ -114,4 +125,5 @@ addBook.addEventListener('click', () => displayModal());
 overlay.addEventListener('click', () => hideModal());
 submitBook.addEventListener('click', addBookToLibrary);
 
-renderLibrary();
+
+loadData();
