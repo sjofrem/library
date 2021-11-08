@@ -8,6 +8,7 @@
 html {
     background-color: #f2f1ef;
     height: 100%;
+    min-height: 100%;
     position: relative;
     width: 100%;
     text-align: center;
@@ -15,6 +16,9 @@ html {
     padding-left: 15%;
     padding-right: 15%;
     font-family: 'Open Sans', sans-serif;
+}
+body{
+    height: 100%;
 }
 /* Header section */
 header{
@@ -29,7 +33,10 @@ h1 {
     margin-bottom: 1rem;
 }
 /* Main section */
-
+main{
+    min-height: 80%;
+    overflow: auto;
+}
 
 #addBook {
     background-color: #f2f1ef;
@@ -200,4 +207,26 @@ label{
 
 #modal.active {
     display: block;
+}
+
+/*Footer section*/
+
+#footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 100%;
+    font-size: 1rem;
+}
+#github {
+    height: 20px;
+    width: auto;
+}
+#github:hover {
+    transform: scale(1.1);
 }
